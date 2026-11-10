@@ -1,0 +1,121 @@
+/* ==========================================================
+   footer.css | rodapé da TTM-Solar
+   Fundo escuro, textos em off-white e botão de contorno,
+   o mesmo estilo "pill" do botão do header.
+   ========================================================== */
+
+.footer-site {
+  --footer-suave: rgba(247, 246, 242, 0.72);
+  --footer-linha: rgba(247, 246, 242, 0.2);
+
+  margin-top: clamp(3rem, 8vw, 6rem);
+  padding-block: clamp(3rem, 8vw, 5rem) 1.5rem;
+  background: var(--cor-escuro);
+  color: var(--cor-fundo);
+}
+
+/* ---------- Bloco principal (3 colunas no desktop) ---------- */
+.footer-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 48em) {
+  .footer-main {
+    grid-template-columns: 1.6fr 1fr 1.2fr;
+    gap: 3rem;
+  }
+}
+
+/* ---------- Marca ---------- */
+.footer-logo {
+  display: inline-block;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: var(--peso-extra);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.footer-tagline {
+  max-width: 32ch;
+  margin-top: 0.9rem;
+  color: var(--footer-suave);
+}
+
+/* ---------- Títulos das colunas ---------- */
+.footer-heading {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: var(--peso-medio);
+  letter-spacing: 0;
+  color: var(--footer-suave);
+}
+
+/* ---------- Navegação ---------- */
+.footer-nav ul {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.footer-nav a {
+  font-size: 1.05rem;
+  text-underline-offset: 0.25em;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Contato ---------- */
+.footer-cta {
+  display: inline-block;
+  padding: 0.75rem 1.4rem;
+  border: 1.5px solid currentColor;
+  border-radius: var(--raio-pill);
+  font-weight: var(--peso-medio);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.footer-cta:hover {
+  background: var(--cor-fundo);
+  color: var(--cor-escuro);
+}
+
+.footer-contact address {
+  margin-top: 1.25rem;
+  font-style: normal;
+  color: var(--footer-suave);
+}
+
+.footer-contact address a {
+  text-underline-offset: 0.25em;
+}
+
+.footer-contact address a:hover {
+  color: var(--cor-fundo);
+  text-decoration: underline;
+}
+
+/* ---------- Faixa de baixo (copyright) ---------- */
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--footer-linha);
+  font-size: 0.875rem;
+  color: var(--footer-suave);
+}
+
+.footer-bottom a:hover {
+  color: var(--cor-fundo);
+  text-decoration: underline;
+}
+
+/* o outline padrão é escuro, então no fundo escuro troca pra claro */
+.footer-site :focus-visible {
+  outline-color: var(--cor-fundo);
+}
