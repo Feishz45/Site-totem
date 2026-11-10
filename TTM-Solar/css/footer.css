@@ -119,3 +119,9 @@
 .footer-site :focus-visible {
   outline-color: var(--cor-fundo);
 }
+
+.footer-main,
+.footer-bottom {
+  width: min(100% - (var(--espaco-pagina) * 2), var(--largura-max));
+  margin-inline: auto;
+}

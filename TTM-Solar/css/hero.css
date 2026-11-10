@@ -1,0 +1,235 @@
+/* =========================================================
+   SEÇÃO HERO — Layout, Textos e CTAs
+   Tudo está com escopo em .hero para não afetar outras seções.
+   ========================================================= */
+
+.hero {
+  /* Tokens locais da seção */
+  --hero-bg: #ffffff;
+  --hero-ink: #0d0d0d;
+  --hero-ink-soft: #3a3a3a;
+  --hero-line: #0d0d0d;
+  --hero-accent: #2fbf71;          /* verde "sustentável" */
+  --hero-font: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+  --hero-gutter: clamp(1rem, 4vw, 4rem);
+  --hero-ease: cubic-bezier(.22, .61, .36, 1);
+
+  background: var(--hero-bg);
+  color: var(--hero-ink);
+  font-family: var(--hero-font);
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+  overflow: hidden;
+}
+
+.hero *,
+.hero *::before,
+.hero *::after {
+  box-sizing: border-box;
+}
+
+/* ---------- Container responsivo (Grid) ---------- */
+.hero__container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: var(--hero-gutter);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 5vw, 3rem);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .hero__container {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(2rem, 4vw, 4rem);
+  }
+}
+
+/* ---------- Área esquerda ---------- */
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  min-width: 0;
+}
+
+.hero__header {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* ---------- Tipografia editorial ---------- */
+.hero__title {
+  margin: 0;
+  font-family: var(--hero-font);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 1.25rem + 4.2vw, 5rem);
+  line-height: .95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  color: var(--hero-ink);
+}
+
+.hero__title-line {
+  display: block;
+}
+
+.hero__subtitle {
+  margin: 0;
+  max-width: 42ch;
+  font-size: clamp(1rem, .95rem + .25vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+  color: var(--hero-ink-soft);
+  text-wrap: pretty;
+}
+
+/* ---------- CTAs ---------- */
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  min-height: 48px;
+  padding: .75rem 1.5rem;
+  border: 1.5px solid var(--hero-line);
+  border-radius: 999px;
+  font-family: var(--hero-font);
+  font-size: .875rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color .25s var(--hero-ease),
+    color .25s var(--hero-ease),
+    border-color .25s var(--hero-ease),
+    transform .25s var(--hero-ease),
+    box-shadow .25s var(--hero-ease);
+}
+
+.hero__cta--primary {
+  background: var(--hero-ink);
+  color: #ffffff;
+}
+
+.hero__cta--secondary {
+  background: transparent;
+  color: var(--hero-ink);
+}
+
+.hero__cta-icon {
+  transition: transform .25s var(--hero-ease);
+}
+
+/* Hover só em dispositivos com mouse */
+@media (hover: hover) {
+  .hero__cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0 var(--hero-line);
+  }
+
+  .hero__cta--primary:hover {
+    background: var(--hero-accent);
+    border-color: var(--hero-line);
+    color: var(--hero-ink);
+  }
+
+  .hero__cta--primary:hover .hero__cta-icon {
+    transform: translateX(4px);
+  }
+
+  .hero__cta--secondary:hover {
+    background: var(--hero-ink);
+    color: #ffffff;
+  }
+}
+
+.hero__cta:active {
+  transform: translateY(0);
+  box-shadow: 0 0 0 var(--hero-line);
+}
+
+.hero__cta:focus-visible {
+  outline: 3px solid var(--hero-accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Container do carrossel ---------- */
+.hero__media {
+  position: relative;
+  width: 100%;
+  min-width: 0;            /* evita overflow do carrossel dentro do grid */
+  min-height: clamp(280px, 40vw, 460px);
+  display: flex;
+  align-items: stretch;
+}
+
+.hero__media > * {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Placeholder enquanto o carrossel não é inserido (some quando houver conteúdo) */
+.hero__media:empty {
+  border: 1.5px dashed #c4c4c4;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__media:empty::before {
+  content: "Carrossel";
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #9a9a9a;
+}
+
+/* ---------- Animação de entrada (fade-in) ---------- */
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__title,
+.hero__subtitle,
+.hero__actions {
+  animation: hero-fade-in .9s var(--hero-ease) both;
+}
+
+.hero__title    { animation-delay: .1s; }
+.hero__subtitle { animation-delay: .3s; }
+.hero__actions  { animation-delay: .5s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__title,
+  .hero__subtitle,
+  .hero__actions {
+    animation: none;
+  }
+
+  .hero__cta,
+  .hero__cta-icon {
+    transition: none;
+  }
+}
