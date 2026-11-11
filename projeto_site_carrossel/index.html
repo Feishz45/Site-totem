@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#efefef" />
+  <meta name="color-scheme" content="light" />
+  <title>SOLARTOM</title>
+
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&family=Unbounded:wght@700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+   
+    <symbol id="i-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="5.5" style="fill: var(--accent); stroke: var(--ink); stroke-width: 1.5"/>
+      <g style="stroke: var(--ink); stroke-width: 2; stroke-linecap: round">
+        <line x1="12" y1="1" x2="12" y2="3.5"/>
+        <line x1="12" y1="20.5" x2="12" y2="23"/>
+        <line x1="1" y1="12" x2="3.5" y2="12"/>
+        <line x1="20.5" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="4.22" x2="5.99" y2="5.99"/>
+        <line x1="18.01" y1="18.01" x2="19.78" y2="19.78"/>
+        <line x1="4.22" y1="19.78" x2="5.99" y2="18.01"/>
+        <line x1="18.01" y1="5.99" x2="19.78" y2="4.22"/>
+      </g>
+    </symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></symbol>
+    <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 11v5M8 8h.01M12 16v-5M12 13a3 3 0 0 1 6 0v3"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.5z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5"/></symbol>
+  </svg>
+
+ 
+  <a class="skip-link" href="#home">Pular para o conteúdo</a>
+  <header class="header" id="header">
+    <div class="header__inner container">
+
+   
+      <a href="#home" class="logo" translate="no" aria-label="SOLARTOM, ir para o início">
+        <span aria-hidden="true">S<svg class="logo__sun" focusable="false"><use href="#i-sun"/></svg>LARTOM</span>
+      </a>
+
+      
+      <nav class="nav" id="nav-menu" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="#home">
+              <svg class="icon" aria-hidden="true"><use href="#i-home"/></svg>Home
+            </a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#sobre">
+              <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>Sobre
+            </a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#servicos">
+              <svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg>Serviços
+            </a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#contato">
+              <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Contato
+            </a>
+          </li>
+        </ul>
+
+        
+        <div class="nav__extra">
+          <p class="nav__label">// Redes sociais</p>
+          <div class="social">
+            <a href="#" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+            <a href="#" aria-label="WhatsApp"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+          </div>
+          <a href="#contato" class="btn">Solicitar Orçamento</a>
+        </div>
+      </nav>
+
+      <div class="header__actions">
+        <a href="#contato" class="btn btn--header">Solicitar Orçamento</a>
+
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="overlay" id="overlay"></div>
+ 
+  <main>
+   
+    <section class="hero" id="home">
+      <div class="hero__inner container">
+
+       
+        <div class="hero__text">
+          <h1 class="hero__title">Conheça o Totem</h1>
+          <p class="hero__lead">Veja o totem de todos os ângulos.</p>
+          <a href="#contato" class="btn">Solicitar Orçamento</a>
+        </div>
+
+       
+        <div class="carousel" id="totem-carousel" role="region" aria-roledescription="carrossel" aria-label="Fotos do totem">
+          <svg class="carousel__sun" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg>
+
+          <div class="carousel__viewport">
+            <ul class="carousel__track">
+            <li class="carousel__slide" data-label="Foto do totem 1 · images/totem-1.jpg">
+              <img src="images/totem-1.jpg" alt="Totem solar de carregamento com painel fotovoltaico no topo, visto de frente" decoding="async" fetchpriority="high" />
+            </li>
+            <li class="carousel__slide" data-label="Foto do totem 2 · images/totem-2.jpg">
+              <img src="images/totem-2.jpg" alt="Detalhe da bancada do totem com carregador sem fio e entradas USB, com dois celulares carregando" decoding="async" />
+            </li>
+            <li class="carousel__slide" data-label="Foto do totem 3 · images/totem-3.jpg">
+              <img src="images/totem-3.jpg" alt="Duas pessoas carregando o celular no totem solar, em uma praça pública" decoding="async" />
+            </li>
+            </ul>
+
+            <button class="carousel__arrow carousel__arrow--prev" type="button" data-carousel-prev aria-label="Foto anterior">
+              <svg class="icon" aria-hidden="true"><use href="#i-chevron-left"/></svg>
+            </button>
+            <button class="carousel__arrow carousel__arrow--next" type="button" data-carousel-next aria-label="Próxima foto">
+              <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+            </button>
+          </div>
+
+          <div class="carousel__bar">
+            <div class="carousel__dots"></div>
+            <p class="carousel__counter" aria-hidden="true"></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    
+
+    <section class="section section--alt" id="sobre"><h2>Sobre</h2></section>
+    <section class="section" id="servicos"><h2>Serviços</h2></section>
+    <section class="section section--alt" id="contato"><h2>Contato</h2></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
