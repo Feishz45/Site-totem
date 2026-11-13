@@ -10,21 +10,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 
-    <!-- Estilos -->
-    <link rel="stylesheet" href=".\css\styles.css">
-    <link rel="stylesheet" href=".\css\header.css">
-    <link rel="stylesheet" href=".\css\hero.css">
-    <link rel="stylesheet" href=".\css\carrossel.css">    
-    <link rel="stylesheet" href=".\css\destaques.css">
-    <link rel="stylesheet" href=".\css\form.css"> 
-    <link rel="stylesheet" href=".\css\footer.css">
+    <!-- CSS AOS (Animação de Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- estilos ! -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/hero.css">
+    <link rel="stylesheet" href="./css/carrossel.css">    
+    <link rel="stylesheet" href="./css/destaques.css">
+    <link rel="stylesheet" href="./css/form.css"> 
+    <link rel="stylesheet" href="./css/footer.css">
+    
+    
 </head>
 <body>
 
     <!-- hero --> 
     <section class="hero" id="inicio" aria-labelledby="hero-titulo">
       <div class="hero__container">
-
         <!-- Área esquerda: textos e CTAs -->
         <div class="hero__content">
           <header class="hero__header">
@@ -48,12 +52,51 @@
           </nav>
         </div>
 
-        <!-- Área direita: container responsivo que recebe o componente do carrossel.
-             Basta inserir o carrossel aqui dentro; o placeholder some sozinho. -->
+        <!-- Área direita: container responsivo -->
         <div class="hero__media" data-slot="carrossel"></div>
+      </div>
+    </section>
+
+    <!-- INÍCIO DA SUA TAREFA: Seção de Orçamento -->
+    <section class="orcamento" id="orcamento" aria-labelledby="orcamento-titulo">
+      <div class="container orcamento__container" data-aos="fade-up" data-aos-duration="800">
+        
+        <header class="orcamento__header">
+          <h2 class="orcamento__title" id="orcamento-titulo">Solicite um Orçamento</h2>
+          <p class="orcamento__subtitle">Preencha os dados abaixo e retornaremos com uma proposta personalizada para a sua necessidade.</p>
+        </header>
+
+        <form class="orcamento__form" id="form-orcamento">
+          <div class="form-group">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">E-mail Corporativo ou Pessoal</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="mensagem">Detalhes do Pedido</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Fale um pouco sobre onde deseja instalar os totens..." required></textarea>
+          </div>
+          
+          <button type="submit" class="orcamento__btn">Enviar Solicitação</button>
+        </form>
+
+        <!-- Modal de Confirmação (Invisível por padrão) -->
+        <div class="orcamento__modal" id="modal-sucesso">
+          <div class="modal__content">
+            <h3 class="modal__title">Orçamento Enviado!</h3>
+            <p class="modal__text">Agradecemos o interesse. Nossa equipe entrará em contato em breve.</p>
+            <button class="modal__btn-fechar" id="btn-fechar-modal">Fechar</button>
+          </div>
+        </div>
 
       </div>
     </section>
+    <!-- FIM DA SUA TAREFA -->
 
     <!-- footer -->  
     <footer class="footer-site" id="sobre">
@@ -75,7 +118,6 @@
             <div class="footer-contact">
                 <h2 class="footer-heading">Contato</h2>
                 <address>
-                    <!-- Troque pelo e-mail real do projeto -->
                     <a href="mailto:contato@ttm-solar.com.br">contato@ttm-solar.com.br</a>
                 </address>
             </div>
@@ -84,7 +126,20 @@
         <div class="footer-bottom container">
             <a href="#inicio">Voltar ao topo</a>
         </div>
-
     </footer>
+
+    <!-- Scripts AOS (Animação de Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Inicializa as animações de scroll
+      AOS.init({
+        once: true, // A animação acontece apenas uma vez ao rolar para baixo
+        offset: 100 // Distância em pixels antes de acionar a animação
+      });
+    </script>
+    
+    <!-- Scripts do Projeto -->
+    <script src="./js/main.js"></script>
+    <script src="./js/form.js"></script>
 </body>
 </html>

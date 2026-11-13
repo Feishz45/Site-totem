@@ -1,0 +1,150 @@
+/* ==========================================================
+   form.css | Estilos da seção de Orçamento e Modal
+   ========================================================== */
+
+.orcamento {
+  padding-block: clamp(3rem, 8vw, 6rem);
+  background-color: var(--cor-fundo);
+}
+
+.orcamento__container {
+  max-width: 600px;
+  background-color: var(--cor-superficie);
+  padding: clamp(2rem, 5vw, 3rem);
+  border: var(--borda);
+  border-radius: var(--raio-card);
+  box-shadow: 4px 4px 0 var(--cor-escuro); /* Sombreamento seguindo o estilo do hero */
+  position: relative;
+}
+
+.orcamento__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.orcamento__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--cor-escuro);
+  margin-bottom: 0.5rem;
+}
+
+.orcamento__subtitle {
+  color: var(--cor-texto-suave);
+  font-size: 1rem;
+}
+
+/* ---------- Formulário ---------- */
+.orcamento__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: var(--peso-medio);
+  font-size: 0.95rem;
+  color: var(--cor-escuro);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: var(--borda);
+  border-radius: 8px;
+  background-color: var(--cor-fundo);
+  font-family: var(--fonte-base);
+  transition: box-shadow 0.2s ease, outline 0.2s ease;
+}
+
+/* Efeito de foco pedido na tarefa */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--cor-escuro);
+  box-shadow: 2px 2px 0 var(--cor-escuro);
+}
+
+.orcamento__btn {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--cor-escuro);
+  color: #ffffff;
+  border: 1.5px solid var(--cor-escuro);
+  border-radius: var(--raio-pill);
+  font-weight: var(--peso-forte);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.orcamento__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0 var(--cor-escuro);
+  background-color: #2fbf71; /* Accent color do hero */
+  color: var(--cor-escuro);
+}
+
+/* ---------- Modal de Confirmação ---------- */
+.orcamento__modal {
+  display: none; /* Escondido por padrão, ativado via JS */
+  position: absolute;
+  inset: 0;
+  background-color: rgba(247, 246, 242, 0.95);
+  border-radius: var(--raio-card);
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Classe adicionada via JS para mostrar o modal */
+.orcamento__modal.ativo {
+  display: flex;
+  animation: modal-fade-in 0.4s ease forwards;
+}
+
+.modal__content {
+  background-color: var(--cor-superficie);
+  padding: 2.5rem 2rem;
+  border: var(--borda);
+  border-radius: var(--raio-card);
+  box-shadow: 4px 4px 0 var(--cor-escuro);
+}
+
+.modal__title {
+  color: #2fbf71; /* Verde sucesso */
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal__text {
+  color: var(--cor-texto-suave);
+  margin-bottom: 1.5rem;
+}
+
+.modal__btn-fechar {
+  padding: 0.5rem 1.5rem;
+  background-color: transparent;
+  color: var(--cor-escuro);
+  border: var(--borda);
+  border-radius: var(--raio-pill);
+  font-weight: var(--peso-medio);
+}
+
+.modal__btn-fechar:hover {
+  background-color: var(--cor-escuro);
+  color: #ffffff;
+}
+
+@keyframes modal-fade-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
