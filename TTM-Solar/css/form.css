@@ -1,10 +1,21 @@
 /* ==========================================================
    form.css | Estilos da seção de Orçamento e Modal
    ========================================================== */
-
+/* Transforma a seção em um pop-up fixo com fundo escuro */
 .orcamento {
-  padding-block: clamp(3rem, 8vw, 6rem);
-  background-color: var(--cor-fundo);
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro transparente */
+  z-index: 9999;
+  display: none; /* Mantém escondido até o clique */
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* O JavaScript vai adicionar essa classe para o pop-up aparecer */
+.orcamento.ativo {
+  display: flex;
 }
 
 .orcamento__container {

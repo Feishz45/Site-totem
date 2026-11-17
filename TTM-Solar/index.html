@@ -22,14 +22,11 @@
     <link rel="stylesheet" href="./css/form.css"> 
     <link rel="stylesheet" href="./css/footer.css">
     
-    
 </head>
 <body>
 
-
-    <!-- Sprite de ícones (reutilizados via <use>) -->
+  <!-- Sprite de ícones -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-    <!-- Símbolo do sol: usado no logo (o "O") e no destaque da Home -->
     <symbol id="i-sun" viewBox="0 0 24 24">
       <circle cx="12" cy="12" r="5.5" style="fill: var(--accent); stroke: var(--ink); stroke-width: 1.5"/>
       <g style="stroke: var(--ink); stroke-width: 2; stroke-linecap: round">
@@ -52,69 +49,41 @@
     <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.5z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5"/></symbol>
   </svg>
 
-
   <a class="skip-link" href="#home">Pular para o conteúdo</a>
 
   <!-- ================= HEADER ================ -->
   <header class="header" id="header">
     <div class="header__inner container">
 
-      <!-- Logo: o "O" de SOLAR vira um sol -->
       <a href="#home" class="logo" translate="no" aria-label="SOLARTTM, ir para o início">
         <span aria-hidden="true">S<svg class="logo__sun" focusable="false"><use href="#i-sun"/></svg>LARTTM</span>
       </a>
 
-      <!-- Menu: abas no desktop / menu lateral no mobile -->
       <nav class="nav" id="nav-menu" aria-label="Navegação principal">
         <ul class="nav__list">
-          <li class="nav__item">
-            <a class="nav__link" href="#home">
-              <svg class="icon" aria-hidden="true"><use href="#i-home"/></svg>Home
-            </a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#sobre">
-              <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>Sobre
-            </a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#servicos">
-              <svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg>Serviços
-            </a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#contato">
-              <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Contato
-            </a>
-          </li>
+          <li class="nav__item"><a class="nav__link" href="#home"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg>Home</a></li>
+          <li class="nav__item"><a class="nav__link" href="#sobre"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>Sobre</a></li>
+          <li class="nav__item"><a class="nav__link" href="#servicos"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg>Serviços</a></li>
+          <li class="nav__item"><a class="nav__link" href="#contato"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Contato</a></li>
         </ul>
 
-        <!-- Só aparece no menu lateral (mobile) -->
         <div class="nav__extra">
           <p class="nav__label">// Redes sociais</p>
           <div class="social">
-            <!-- TODO: troque os "#" pelos links reais -->
             <a href="#" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a>
             <a href="#" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
             <a href="#" aria-label="WhatsApp"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
           </div>
-          <a href="#contato" class="btn">Solicitar Orçamento</a>
+          <!-- Ajustado: Botão do menu mobile -->
+          <a href="#" class="btn btn-abrir-orcamento">Solicitar Orçamento</a>
         </div>
       </nav>
 
       <div class="header__actions">
-        <!-- CTA do desktop -->
-        <a href="#contato" class="btn btn--header">Solicitar Orçamento</a>
+        <!-- CTA do desktop com o ID já aplicado -->
+        <a href="#" id="btn-abrir-orcamento" class="btn btn--header btn-abrir-orcamento">Solicitar Orçamento</a>
 
-        <!-- Botão hambúrguer (só no mobile) -->
-        <button
-          class="nav-toggle"
-          id="nav-toggle"
-          type="button"
-          aria-label="Abrir menu"
-          aria-expanded="false"
-          aria-controls="nav-menu"
-        >
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
           <span class="nav-toggle__bar"></span>
           <span class="nav-toggle__bar"></span>
           <span class="nav-toggle__bar"></span>
@@ -123,13 +92,11 @@
     </div>
   </header>
 
-  <!-- Fundo escurecido atrás do menu lateral (mobile) -->
   <div class="overlay" id="overlay"></div>
 
     <!-- hero --> 
     <section class="hero" id="inicio" aria-labelledby="hero-titulo">
       <div class="hero__container">
-        <!-- Área esquerda: textos e CTAs -->
         <div class="hero__content">
           <header class="hero__header">
             <h1 class="hero__title" id="hero-titulo">
@@ -142,7 +109,8 @@
           </header>
 
           <nav class="hero__actions" aria-label="Ações principais">
-            <a href="#orcamento" class="hero__cta hero__cta--primary">
+            <!-- Ajustado: Botão do Hero Section -->
+            <a href="#" class="hero__cta hero__cta--primary btn-abrir-orcamento">
               Faça seu orçamento
               <svg class="hero__cta-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
                 <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -152,15 +120,17 @@
           </nav>
         </div>
 
-        <!-- Área direita: container responsivo -->
         <div class="hero__media" data-slot="carrossel"></div>
       </div>
     </section>
 
-    <!-- INÍCIO DA SUA TAREFA: Seção de Orçamento -->
+    <!-- INÍCIO DA SUA TAREFA: Seção de Orçamento (AGORA COMO POP-UP) -->
     <section class="orcamento" id="orcamento" aria-labelledby="orcamento-titulo">
       <div class="container orcamento__container" data-aos="fade-up" data-aos-duration="800">
         
+        <!-- Botão Fechar adicionado aqui (estilo inline para garantir sobreposição) -->
+        <button id="btn-fechar-form" aria-label="Fechar Modal" style="position: absolute; top: 1rem; right: 1.5rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; font-weight: bold; color: #141414; z-index: 10;">X</button>
+
         <header class="orcamento__header">
           <h2 class="orcamento__title" id="orcamento-titulo">Solicite um Orçamento</h2>
           <p class="orcamento__subtitle">Preencha os dados abaixo e retornaremos com uma proposta personalizada para a sua necessidade.</p>
@@ -185,7 +155,7 @@
           <button type="submit" class="orcamento__btn">Enviar Solicitação</button>
         </form>
 
-        <!-- Modal de Confirmação (Invisível por padrão) -->
+        <!-- Modal de Confirmação -->
         <div class="orcamento__modal" id="modal-sucesso">
           <div class="modal__content">
             <h3 class="modal__title">Orçamento Enviado!</h3>
@@ -205,41 +175,27 @@
             <p class="subtitle">Conheça a tecnologia de ponta por trás do nosso projeto.</p>
             
             <div class="grid-destaques">
-                <!-- Cartão 1 -->
                 <div class="card-destaque">
-                    <div class="badges-container">
-                        <span class="badge sustentavel">Sustentável</span>
-                    </div>
+                    <div class="badges-container"><span class="badge sustentavel">Sustentável</span></div>
                     <div class="card-icon">⚡</div>
                     <h3>Autonomia Off-Grid</h3>
                     <p>Sistema totalmente independente da rede elétrica convencional, garantindo funcionamento contínuo e eficiência energética em qualquer lugar.</p>
                 </div>
-
-                <!-- Cartão 2 -->
                 <div class="card-destaque">
-                    <div class="badges-container">
-                        <span class="badge inovacao">Inovação</span>
-                    </div>
+                    <div class="badges-container"><span class="badge inovacao">Inovação</span></div>
                     <div class="card-icon">📶</div>
                     <h3>Sinal Wi-Fi Integrado</h3>
                     <p>Conectividade avançada embutida para monitoramento remoto em tempo real, telemetria e controle completo na palma da mão.</p>
                 </div>
-
-                <!-- Cartão 3 -->
                 <div class="card-destaque">
-                    <div class="badges-container">
-                        <span class="badge clima">Clima Resistente</span>
-                    </div>
+                    <div class="badges-container"><span class="badge clima">Clima Resistente</span></div>
                     <div class="card-icon">🛡️</div>
                     <h3>Design Resistente</h3>
                     <p>Construção robusta projetada para suportar intempéries severas, radiação UV intensa, umidade e variações extremas de temperatura.</p>
                 </div>
             </div>
 
-            <!-- Elemento visual de scroll/setas -->
-            <div class="scroll-indicator">
-                <span class="arrow-down"></span>
-            </div>
+            <div class="scroll-indicator"><span class="arrow-down"></span></div>
         </div>
     </section>
 
@@ -262,12 +218,9 @@
 
             <div class="footer-contact">
                 <h2 class="footer-heading">Contato</h2>
-                <address>
-                    <a href="mailto:contato@ttm-solar.com.br">contato@ttm-solar.com.br</a>
-                </address>
+                <address><a href="mailto:contato@ttm-solar.com.br">contato@ttm-solar.com.br</a></address>
             </div>
         </div>
-
         <div class="footer-bottom container">
             <a href="#inicio">Voltar ao topo</a>
         </div>
@@ -276,11 +229,7 @@
     <!-- Scripts AOS (Animação de Scroll) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      // Inicializa as animações de scroll
-      AOS.init({
-        once: true, // A animação acontece apenas uma vez ao rolar para baixo
-        offset: 100 // Distância em pixels antes de acionar a animação
-      });
+      AOS.init({ once: true, offset: 100 });
     </script>
     
     <!-- Scripts do Projeto -->
